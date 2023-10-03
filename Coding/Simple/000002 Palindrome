@@ -1,0 +1,30 @@
+# Objective: Create a class and function to check if a given integer number/value is a palindrome
+# Palindrome: if orginal value == reverse(orignal value)
+
+# Method 001:
+# Step 001: Logic: reverse integer value and then see if it is matching with original value
+#          Method: using modulo to get last number of orinal value and add to reversed (firstly multiple by 10 to increase its digit values)
+# Step 002: Data Cleansing: Eliminating values not needed and might create issues
+# Step 002: A: as negative number can never be palindrome and might impact negatively our logic in step 001
+#              therefore returning False if number is negative
+
+# Complexity
+# Time  - O(log10(x)) 
+# Space - O(log10(x))
+
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+
+        temp_x = x
+        reversed = 0
+
+        while True:
+
+            if x < 0:
+                return False
+
+            if temp_x==0:
+                return True if x == reversed else False
+
+            reversed = reversed * 10 + temp_x% 10
+            temp_x //= 10
