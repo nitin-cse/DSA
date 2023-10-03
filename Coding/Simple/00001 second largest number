@@ -1,1 +1,40 @@
+sequenceOfNumbers = [2,3,4,5,1,1,3,5,7]
 
+# Creating another value with a replica of sequenceOfNumbers data array/list
+sequenceOfNumbers_next = sequenceOfNumbers.copy()
+
+# Method - 001: 
+# Step 001: checking if number of elements is 0 or 1 hence we can't compute 2nd largest number
+# Step 002: sorting the array in ascending array/list
+# Step 003: return or print element at the second last index i.e. -2
+if len(sequenceOfNumbers) in [0, 1]:
+    print(-1)
+sequenceOfNumbers.sort()
+print(sequenceOfNumbers[-2])
+
+
+# Method - 002: 
+# Step 001: checking if a number of elements is 0 or 1 hence we can't compute 2nd largest number
+if len(sequenceOfNumbers) in [0, 1]:
+    print(-1)
+
+# Step 002: creating variable max_1 and max2 with initial values as min(1st, 2nd elements) and max(1st, 2nd elements) resp.
+# Logic: we are creating an array of 2 elements with max and 2nd max values from array with initial values as 1st and 2nd element
+max_1 = min(sequenceOfNumbers_next[0], sequenceOfNumbers_next[1])
+max_2 = max(sequenceOfNumbers_next[0], sequenceOfNumbers_next[1])
+
+# Step 003: iterating elements from 3re element till last element of the array, let say element from array for each loop
+# Step 003: A: if element greater than max_2 then max_1 = max_2 and max_2 = element i.e. shifing values 
+# Step 003: B: else if element lower than max_1 then do nothing as max_1 and max_2 are max and 2nd max 
+# Step 003: C: else max_1 = element as element lies between max_1 and max_2 therefore max is max_2 and max2 will be element 
+
+for element in sequenceOfNumbers_next[2:]:
+    if max_2 < element:
+        max_1 = max_2
+        max_2 = element    
+    elif max_1 > element:
+        pass
+    else:
+        max_1 = element
+        
+print(max_1)
