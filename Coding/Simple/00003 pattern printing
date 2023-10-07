@@ -1,0 +1,218 @@
+# Below are the pattern python code 
+# Pattern questions link - https://takeuforward.org/strivers-a2z-dsa-course/must-do-pattern-problems-before-starting-dsa/
+
+# User input for asterik number to be printed in a row and columns
+asteric_pattern = input('Enter number of asterick to be printed: ')
+# Data type conversion: input return stirng value so converting value to integer
+asteric_pattern = int(asteric_pattern)
+
+for index in range(1, asteric_pattern + 1):
+    print('* ' * asteric_pattern)
+
+print('--------------------------------------')
+    
+for index in range(1, asteric_pattern + 1):
+    print('* ' * index)
+    
+print('--------------------------------------')
+
+index_str = ''
+for index in range(1, asteric_pattern + 1):
+    index_str += str(index)
+    print(index_str)
+    
+print('--------------------------------------')
+
+index_str = ''
+for index in range(1, asteric_pattern + 1):
+    print(str(index)*index)
+    
+print('--------------------------------------')
+
+for index in range(asteric_pattern, 0, -1):
+    print('*' * index)
+    
+print('--------------------------------------')
+
+for index in range(asteric_pattern, 0, -1):
+    for inner_index in range(1, index+1):
+        print(inner_index, end='')
+    print()
+    
+print('--------------------------------------')
+
+# Computing max values in the left array
+elements_last_row = 1 + (asteric_pattern - 1)*2
+left_arr_len = (elements_last_row - 1)//2
+
+for row_index in range(asteric_pattern):
+    print( (' '*(left_arr_len - row_index) + '*'*row_index ) + ('*') + ('*'*row_index + ' '*(left_arr_len - row_index) ) )
+
+print('--------------------------------------')
+
+# Computing max values in the left array
+elements_last_row = 1 + (asteric_pattern - 1)*2
+left_arr_len = (elements_last_row - 1)//2
+
+for row_index in range(asteric_pattern, 0, -1):
+    row_index -= 1
+    print( (' '*(left_arr_len - row_index ) + '*'*row_index ) + ('*') + ('*'*row_index + ' '*(left_arr_len - row_index) ) )
+
+print('--------------------------------------')
+
+# Computing max values in the left array
+elements_last_row = 1 + (asteric_pattern - 1)*2
+left_arr_len = (elements_last_row - 1)//2
+
+for row_index in range(asteric_pattern):
+    print( (' '*(left_arr_len - row_index) + '*'*row_index ) + ('*') + ('*'*row_index + ' '*(left_arr_len - row_index) ) )
+
+# Computing max values in the left array
+elements_last_row = 1 + (asteric_pattern - 1)*2
+left_arr_len = (elements_last_row - 1)//2
+
+for row_index in range(asteric_pattern, 0, -1):
+    row_index -= 1
+    print( (' '*(left_arr_len - row_index ) + '*'*row_index ) + ('*') + ('*'*row_index + ' '*(left_arr_len - row_index) ) )
+
+print('--------------------------------------')
+
+index_str = ''
+for index in range(1, asteric_pattern + 1):
+    print('*'*index)
+
+for index in range(asteric_pattern, 0, -1):
+    print('*' * index)
+    
+print('--------------------------------------')
+
+total_elements = (asteric_pattern*(asteric_pattern+1))//2
+row_index = total_traverse_elements = 1
+
+for val in range(1, total_elements+1):
+    print(str(val%2) + ' ', end = '', sep=' ')
+    
+    if total_traverse_elements == val:
+        print()
+        row_index += 1
+        total_traverse_elements += row_index
+        
+    
+print('--------------------------------------')
+
+num_pattern = str()
+for row_index in range(1, 1+asteric_pattern):
+    num_pattern += str(row_index)
+    temp_num_pattern = num_pattern + ' '*(asteric_pattern-len(num_pattern))
+    print(temp_num_pattern + temp_num_pattern[::-1])
+    
+print('--------------------------------------')
+
+total_elements = (asteric_pattern*(asteric_pattern+1))//2
+row_index = total_traverse_elements = 1
+
+for val in range(1, total_elements+1):
+    print(str(val) + ' ', end = '', sep=' ')
+    
+    if total_traverse_elements == val:
+        print()
+        row_index += 1
+        total_traverse_elements += row_index
+
+print('--------------------------------------')
+
+output_pattern = str()
+for index in range(asteric_pattern):
+    output_pattern += chr(65 + index)
+    print(output_pattern)
+
+print('--------------------------------------')
+
+for index in range(asteric_pattern):
+    for inner_index in range(asteric_pattern - index):
+        print(chr(65+inner_index), end='')
+    print()
+
+print('--------------------------------------')
+
+for index in range(1, 1+asteric_pattern):
+        print(chr(64+index)*index)
+
+print('--------------------------------------')
+
+char_list = ''
+for iteration in range(asteric_pattern):
+    L_value = ' '*( (asteric_pattern-1) - iteration) + char_list
+    M_value = chr(65 + iteration)
+    R_value = L_value[::-1]
+    
+    print(L_value + M_value + R_value)
+    char_list += M_value
+    
+print('--------------------------------------')
+
+for outer_loop in range(asteric_pattern-1, -1, -1):
+    for inner_loop in range(outer_loop, asteric_pattern):
+        print(chr(65+inner_loop), end=' ')
+    print()
+    
+char_list = '' 
+for iteration in range(asteric_pattern-1, -1, -1):
+    char_list = chr(65+iteration) + char_list # Concatenating present and previously run list values
+    print(char_list)
+
+print()
+char_list = chr(65 + asteric_pattern - 1)
+print(char_list)
+for iteration in range(asteric_pattern-2, -1, -1):
+    char_list = chr(65+iteration) + ' ' + char_list # Concatenating present and previously run list values
+    print(char_list)
+
+print('--------------------------------------')
+
+for iteration in range(asteric_pattern):
+    temp_value = ('*' * (asteric_pattern - iteration) ) + (' ' * iteration)
+    print(temp_value + temp_value[::-1])
+
+for iteration in range(1, asteric_pattern + 1):
+    temp_value = ('*' * iteration) + (' ' * (asteric_pattern - iteration))
+    print(temp_value + temp_value[::-1])
+
+print('--------------------------------------')
+
+total_rows = total_columns = asteric_pattern
+for iteration in range(1, total_rows + 1):
+    temp_value = ('*') * iteration + \
+                 (' ') * (total_columns - iteration)
+    print(temp_value, temp_value[::-1])
+
+for iteration in range(total_rows, 0, -1):
+    temp_value = ('*') * iteration + \
+                 (' ') * (total_columns - iteration)
+    print(temp_value, temp_value[::-1])
+
+print('--------------------------------------')
+
+pattern_top_bottom = '*' * total_columns
+pattern_between = '*' + (' '* (total_columns - 2)) + '*'  
+
+for iteration in range(1, total_rows+1):
+    if iteration == 1 or iteration == total_rows:
+        print(pattern_top_bottom)
+    else:
+        print(pattern_between)
+
+print('--------------------------------------')
+
+char_list = str()
+for iteration in range(total_rows, 0, -1):
+    temp_value = char_list + str(iteration)*(iteration-1)
+    print(temp_value, str(iteration), temp_value[::-1], sep='')
+    char_list += str(iteration)
+
+char_list = char_list[:-1]
+for iteration in range(2, total_rows+1):
+    temp_value = char_list[:len(char_list)-(iteration-1)] + str(iteration)*(iteration-1)
+    print(temp_value, iteration, temp_value[::-1], sep='')
+
+print('--------------------------------------')    
